@@ -11,7 +11,7 @@ function ProductCard({
   rating,
 }: ProductCardProps) {
   return (
-    <Link to={'/'} className={styles['link']}>
+    <Link to={`/product/${id}`} className={styles['link']}>
       <div className={styles['card']}>
         <div
           className={styles['head']}

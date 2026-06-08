@@ -6,6 +6,7 @@ import { Menu } from './pages/Menu/Menu'
 import { Cart } from './pages/Cart/Cart'
 import { Layout } from './layout/Layout'
 import { Error } from './pages/Error/Error'
+import { Product } from './pages/Product/Product'
 
 
 const router = createBrowserRouter([
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: '/cart',
         element: <Cart />,
+      },
+      {
+        path: '/product/:id',
+        element: <Product />,
       },
     ],
   },
