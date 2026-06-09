@@ -1,0 +1,16 @@
+info:
+  name: ProductsById
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: '{{domain}}pizza-api-demo/products/2'
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+​
