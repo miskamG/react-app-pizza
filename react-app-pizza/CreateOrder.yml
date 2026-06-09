@@ -1,0 +1,24 @@
+info:
+  name: CreateOrder
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: '{{domain}}pizza-api-demo/order'
+  body:
+    type: json
+    data: |-
+      {
+        "total": 320,
+        "products": [
+          {"id": 1, "count": 1, "price": 320}
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

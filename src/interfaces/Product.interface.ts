@@ -1,7 +1,7 @@
-export interface ProductCardProps {
+export interface Product {
   id: number
   name: string
-  description: string
+  ingredients: string[]
   image: string
   price: number
   rating: number

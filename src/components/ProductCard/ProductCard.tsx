@@ -4,7 +4,7 @@ import type { ProductCardProps } from './ProductCard.props'
 
 function ProductCard({
   id,
-  title,
+  name,
   description,
   image,
   price,
@@ -27,7 +27,7 @@ function ProductCard({
           <span className={styles['rating']}>{rating} ⭐</span>
         </div>
         <div className={styles['footer']}>
-          <h3 className={styles['title']}>{title}</h3>
+          <h3 className={styles['title']}>{name}</h3>
           <p className={styles['description']}>{description}</p>
         </div>
       </div>

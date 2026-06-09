@@ -1,0 +1,26 @@
+info:
+  name: Register
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: '{{domain}}pizza-api-demo/auth/register'
+  body:
+    type: json
+    data: |-
+      {
+        "email": "ar4@gmail.com",
+        "name": "artur",
+        "password": "123",
+        "phone": "89999999999",
+        "address": "Москва"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+​

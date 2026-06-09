@@ -3,6 +3,7 @@
   min-height: 165px;
   border-radius: 19px;
   margin-bottom: 8px;
+  background-size: cover;
 }
 .card {
   background: var(--white-color);
