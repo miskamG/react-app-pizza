@@ -4,11 +4,14 @@ import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import { PREFIX } from './helpers/API'
 import './index.css'
-import { Layout } from './layout/Layout'
+import { Layout } from './layout/Main/Layout'
 import { Cart } from './pages/Cart/Cart'
 import { Error } from './pages/Error/Error'
 // import { Menu } from './pages/Menu/Menu'
 import { Product } from './pages/Product/Product'
+import { AuthLayout } from './layout/Auth/AuthLayout'
+import { Login } from './pages/Login/Login'
+import { Register } from './pages/Register/Register'
 
 const Menu = lazy(() => import('./pages/Menu/Menu'))
 
@@ -41,6 +44,20 @@ const router = createBrowserRouter([
           return data
         },
       },
+    ],
+  },
+  {
+    path: '/auth',
+    element: <AuthLayout />,
+    children: [
+      {
+        path: 'login',
+        element: <Login />,
+      },
+      {
+        path: 'register',
+        element: <Register />,
+      }
     ],
   },
   {

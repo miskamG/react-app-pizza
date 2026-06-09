@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from 'react-router'
-import Button from '../components/Button/Button'
+import Button from '../../components/Button/Button'
 import styles from './Layout.module.css'
 import cn from 'classnames'
 
