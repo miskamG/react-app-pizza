@@ -8,9 +8,10 @@ import { Layout } from './layout/Main/Layout'
 import { Cart } from './pages/Cart/Cart'
 import { Error } from './pages/Error/Error'
 // import { Menu } from './pages/Menu/Menu'
-import { Product } from './pages/Product/Product'
+import { RequireAuth } from './helpers/RequireAuth'
 import { AuthLayout } from './layout/Auth/AuthLayout'
 import { Login } from './pages/Login/Login'
+import { Product } from './pages/Product/Product'
 import { Register } from './pages/Register/Register'
 
 const Menu = lazy(() => import('./pages/Menu/Menu'))
@@ -18,7 +19,11 @@ const Menu = lazy(() => import('./pages/Menu/Menu'))
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Layout />,
+    element: (
+      <RequireAuth>
+        <Layout />
+      </RequireAuth>
+    ),
     children: [
       {
         path: '/',
@@ -57,7 +62,7 @@ const router = createBrowserRouter([
       {
         path: 'register',
         element: <Register />,
-      }
+      },
     ],
   },
   {
