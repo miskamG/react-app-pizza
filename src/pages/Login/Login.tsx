@@ -7,6 +7,9 @@ import Input from '../../components/Input/input'
 import { PREFIX } from '../../helpers/API'
 import styles from './Login.module.css'
 import type { LoginResponse } from '../../interfaces/Auth.interface'
+import { useDispatch } from 'react-redux'
+import type { AppDispatch } from '../../store/store'
+import { userActions } from '../../store/user.slice'
 
 export type LoginForm = {
   email: {
@@ -20,7 +23,7 @@ export type LoginForm = {
 export function Login() {
   const [error, setError] = useState<string | null>()
   const navigate = useNavigate()
-  
+  const dispatch = useDispatch<AppDispatch>()
 
   const submit: SubmitEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault()
@@ -41,6 +44,8 @@ export function Login() {
       })
 
       localStorage.setItem('jwt', data.access_token)
+
+      dispatch(userActions.addJwt(data.access_token))
 
       navigate('/')
     } catch (e) {

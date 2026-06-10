@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 
 export interface UserState {
   jwt: string | null
@@ -12,7 +12,7 @@ export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    addJwt: (state, action) => {
+    addJwt: (state, action: PayloadAction<string>) => {
       state.jwt = action.payload
     },
     logout: (state) => {
