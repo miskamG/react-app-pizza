@@ -12,10 +12,6 @@ export default function Menu() {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [error, setError] = useState<string | undefined>()
   const [filter, setFilter] = useState<string>()
-  
-  useEffect(() => {
-    getMenu(filter)
-  }, [filter])
 
   const getMenu = async (name?: string) => {
     try {
@@ -42,6 +38,10 @@ export default function Menu() {
   const updateFilter = (e: ChangeEvent<HTMLInputElement>) => {
     setFilter(e.target.value)
   }
+
+  useEffect(() => {
+    getMenu(filter)
+  }, [filter])
 
   return (
     <>
