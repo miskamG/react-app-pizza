@@ -50,9 +50,9 @@ export function Layout() {
             }
           >
             <img src="./cart-icon.svg" alt="" />
-            Корзина
+            Корзина{' '}
+            <span className={styles.cartCount}>{items.reduce((acc, item) => acc + item.count, 0)}</span>
           </NavLink>
-          {items.reduce((acc, item) => acc + item.count, 0)}
         </div>
         <Button className={styles.exit} onClick={logout}>
           <img src="./exit-icon.svg" alt="" />
